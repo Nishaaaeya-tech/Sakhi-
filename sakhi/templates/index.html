@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sakhi – Women’s health, skin &amp; hair guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<header class="top"><div class="nav"><a class="logo" href="#top">Sakhi 🌸</a>
+<ul><li><a href="#tracker">Tracker</a></li><li><a href="#conditions">Conditions</a></li><li><a href="#weight">Weight</a></li><li><a href="#diet">Diet</a></li><li><a href="#yoga">Yoga</a></li><li><a href="#glow">Skin &amp; Hair</a></li><li><a href="#ask">Ask</a></li></ul></div></header>
+
+<main id="top">
+<div class="wrap hero">
+<div>
+<h1>Sakhi</h1>
+<p>Track your period, understand PCOD/PCOS, and get simple diet, yoga, skin care and hair care guidance in plain, kind language. No judgement, no sign-up.</p>
+<a class="btn" href="#tracker">Track my cycle</a><a class="btn alt" href="#conditions">Read health guides</a>
+</div>
+<div class="card ringbox" aria-live="polite">
+<svg viewBox="0 0 200 200" id="ring" role="img" aria-label="Cycle phase ring"></svg>
+<div id="ringTxt" style="font:700 1.3rem Fraunces,serif;color:var(--plum)">Enter your dates below</div>
+<div class="legend"><span><i style="background:var(--menses)"></i>Period</span><span><i style="background:var(--follic)"></i>Follicular</span><span><i style="background:var(--ovul)"></i>Fertile window</span><span><i style="background:var(--lut)"></i>Luteal</span></div>
+</div>
+</div>
+
+<section id="tracker" style="padding-top:20px"><div class="wrap">
+<h2>Period and cycle tracker</h2>
+<div class="tracker">
+<div class="card">
+<label for="last">First day of your last period</label><input type="date" id="last">
+<label for="cyc">Usual cycle length (days)</label><input type="number" id="cyc" value="28" min="15" max="60">
+<label for="plen">Usual period length (days)</label><input type="number" id="plen" value="5" min="1" max="12">
+<p style="margin-top:16px"><button class="btn" id="go" type="button">Show my cycle</button></p>
+</div>
+<div class="card"><h3>Your results</h3><div id="result"><p class="doc">Add your last period date and press <b>Show my cycle</b>. Your dates stay in this browser only.</p></div></div>
+</div></div></section>
+
+<section id="conditions" class="band"><div class="wrap">
+<h2>Common concerns, explained</h2>
+<p>Short guides on what is common, what may help, and when to see a gynecologist.</p>
+<div style="color:var(--ink)">
+<details><summary>PCOD / PCOS</summary>
+<p>Polycystic ovarian disease or syndrome is a hormonal condition. Ovaries may release eggs irregularly, and androgen (male hormone) levels can be higher.</p>
+<p><b>Common signs:</b></p><ul><li>Irregular or missed periods</li><li>Acne, oily skin, excess facial or body hair</li><li>Scalp hair thinning</li><li>Weight gain, especially around the belly</li><li>Trouble getting pregnant</li></ul>
+<p><b>What helps:</b> regular movement, a balanced low-glycaemic diet, good sleep, stress care, and medical treatment when needed. Even a 5 to 10% weight loss can help restore regular cycles in some women who are overweight.</p>
+<p class="doc">Diagnosis needs a doctor, usually with an ultrasound and blood tests.</p></details>
+<details><summary>Late or missed periods</summary>
+<p>A cycle of 21 to 35 days is considered normal for adults. Stress, travel, illness, sudden weight change, thyroid problems, PCOS and pregnancy can all delay a period.</p>
+<ul><li>If sexually active, take a pregnancy test first.</li><li>Note stress, sleep and weight changes.</li><li>Missing 3 or more periods in a row needs a doctor’s visit.</li></ul></details>
+<details><summary>Painful or heavy periods</summary>
+<p>Mild cramps are common. Pain that stops you from daily life is not something you must put up with. Heavy bleeding means soaking a pad or tampon every hour for several hours, or passing large clots.</p>
+<ul><li>Heat packs, light walking and gentle yoga can ease cramps.</li><li>Possible causes include fibroids, endometriosis, adenomyosis, thyroid or clotting issues.</li><li>Heavy bleeding can cause anaemia: tiredness, dizziness and pale skin are warning signs.</li></ul></details>
+<details><summary>Thyroid and your cycle</summary>
+<p>An underactive or overactive thyroid can change cycle length and flow. A simple TSH blood test can check it. Ask your doctor if you also notice fatigue, weight change, hair loss or feeling too cold or hot.</p></details>
+</div>
+<div class="note alert" style="color:var(--ink)"><b>See a doctor soon if:</b> bleeding is very heavy, pain is severe, you have a fever with pelvic pain, you bleed after menopause or between periods, or you have had no period for 3 months or more.</div>
+</div></section>
+
+<section id="weight"><div class="wrap">
+<h2>Weight and BMI check</h2>
+<div class="tracker">
+<div class="card">
+<label for="h">Height (cm)</label><input type="number" id="h" min="100" max="220" placeholder="155">
+<label for="w">Weight (kg)</label><input type="number" id="w" min="25" max="250" placeholder="62">
+<p style="margin-top:16px"><button class="btn" id="bmiGo" type="button">Calculate BMI</button></p>
+<div id="bmiOut"></div>
+</div>
+<div class="card"><h3>Simple habits that help</h3>
+<ul><li>Walk 30 minutes a day, and add strength work 2 to 3 times a week.</li><li>Fill half your plate with vegetables, a quarter with protein, a quarter with whole grains.</li><li>Choose fruit over juice and whole grains over maida.</li><li>Sleep 7 to 8 hours. Poor sleep raises cravings and insulin resistance.</li><li>Aim for steady, slow loss. Crash diets can worsen cycle problems.</li></ul>
+<p class="doc">BMI cut-offs use the Asian-Indian ranges. BMI is a screening number, not a diagnosis.</p></div>
+</div></div></section>
+
+<section id="diet" style="background:var(--surface)"><div class="wrap">
+<h2>Diet charts</h2>
+<div class="tabs" role="group" aria-label="Diet plan type">
+<button type="button" data-d="pcodv" aria-pressed="true">PCOD vegetarian</button>
+<button type="button" data-d="pcodn" aria-pressed="false">PCOD with egg or fish</button>
+<button type="button" data-d="phase" aria-pressed="false">Eat by cycle phase</button></div>
+<div class="scroll"><table id="dietTbl"></table></div>
+<div class="note">Sample plans for general wellness. Portions, allergies, diabetes, thyroid or other conditions need personal advice from a registered dietitian.</div>
+<h2 style="margin-top:48px">Healthy 2-minute recipes</h2>
+<p>Quick snacks and breakfasts for busy days. No long cooking needed.</p>
+<div class="grid3">
+<div class="card rec"><h3>Banana-flax curd bowl</h3><p class="t">2 minutes, no cooking</p><p><b>You need:</b> 1 cup curd, ½ banana sliced, 1 tsp roasted flaxseed powder, a pinch of cinnamon.</p><p>Mix everything in a bowl. Good for gut health, with omega-3 from the flax.</p></div>
+<div class="card rec"><h3>Quick sprouts chaat</h3><p class="t">2 minutes, no cooking</p><p><b>You need:</b> ½ cup ready sprouts, chopped onion, tomato, lemon juice, chaat masala.</p><p>Toss and eat. High in protein and fibre, which helps steady blood sugar in PCOD.</p></div>
+<div class="card rec"><h3>Spinach-banana smoothie</h3><p class="t">2 minutes, blender</p><p><b>You need:</b> a handful of spinach, 1 banana, 1 cup milk or plant milk, 1 tsp chia seeds.</p><p>Blend until smooth. A gentle iron and magnesium boost during your period.</p></div>
+<div class="card rec"><h3>Masala makhana</h3><p class="t">2 minutes, pan</p><p><b>You need:</b> 1 cup makhana, 1 tsp ghee, salt, black pepper, a pinch of turmeric.</p><p>Roast in a pan on medium heat for 2 minutes until crisp. A light, low-glycaemic snack.</p></div>
+<div class="card rec"><h3>Cucumber-mint chaas</h3><p class="t">2 minutes, blender</p><p><b>You need:</b> 1 cup curd, ½ cup water, ½ cucumber, mint leaves, roasted jeera powder.</p><p>Blend and drink chilled or at room temperature. Can help with bloating before your period.</p></div>
+<div class="card rec"><h3>Date and nut bites</h3><p class="t">2 minutes, no cooking</p><p><b>You need:</b> 2 dates (seeds removed), 4 almonds, 2 walnut halves.</p><p>Eat together or press into a small ball. Gives iron and energy on period days. If you manage blood sugar, keep to 2 dates.</p></div>
+</div>
+</div></section>
+
+<section id="yoga"><div class="wrap">
+<h2>Yoga for periods and PCOD</h2>
+<p>Move gently. Skip inversions and intense twists on heavy-flow days, and stop if anything hurts.</p>
+<div class="grid3">
+<div class="card pose"><h3>Baddha Konasana</h3><p><b>Helps:</b> pelvic circulation, hip stiffness.</p><p>Sit tall, join the soles of your feet, let knees fall open. Breathe slowly for 1 minute.</p><a class="watch" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=baddha+konasana+butterfly+pose+short+tutorial">Watch demo video</a></div>
+<div class="card pose"><h3>Balasana</h3><p><b>Helps:</b> cramps, back ache, stress.</p><p>Kneel, sit back on your heels, fold forward with arms extended. Rest 1 to 2 minutes.</p><a class="watch" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=balasana+child+pose+short+tutorial">Watch demo video</a></div>
+<div class="card pose"><h3>Bhujangasana</h3><p><b>Helps:</b> lower back, abdominal tone.</p><p>Lie on your belly, palms under shoulders, lift your chest gently. Hold 15 to 20 seconds, 3 rounds.</p><a class="watch" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=bhujangasana+cobra+pose+short+tutorial">Watch demo video</a></div>
+<div class="card pose"><h3>Malasana</h3><p><b>Helps:</b> hips and pelvic floor.</p><p>Squat with feet wide, palms together at the chest. Hold 30 seconds, using support if needed.</p><a class="watch" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=malasana+yogi+squat+short+tutorial">Watch demo video</a></div>
+<div class="card pose"><h3>Surya Namaskar</h3><p><b>Helps:</b> weight, insulin sensitivity, energy.</p><p>Start with 3 rounds and build to 12 over weeks. Best outside heavy-flow days.</p><a class="watch" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=surya+namaskar+beginners+short+tutorial">Watch demo video</a></div>
+<div class="card pose"><h3>Anulom Vilom</h3><p><b>Helps:</b> stress and sleep.</p><p>Alternate-nostril breathing for 5 minutes, slow and relaxed, never forced.</p><a class="watch" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=anulom+vilom+pranayama+short+tutorial">Watch demo video</a></div>
+</div></div></section>
+
+<section id="glow"><div class="wrap">
+<h2>Skin and hair care</h2>
+<p>Hormones, stress, food and sleep show up on your skin and hair. Many women with irregular periods or PCOD notice acne, dullness or hair fall too, so we cover them together.</p>
+
+<h3 style="margin-top:28px">Common skin and hair concerns</h3>
+<details><summary>Acne and period breakouts</summary><p>Pimples often appear along the chin and jaw a week before your period, when hormones shift. PCOD can also cause stubborn acne because of higher androgen levels.</p><ul><li>Wash your face twice a day with a gentle cleanser.</li><li>Use products with salicylic acid or niacinamide, starting a few times a week.</li><li>Do not pick or squeeze, which causes marks and scars.</li><li>Limit sugary foods and sweet drinks, which may worsen acne for some women.</li></ul><p class="doc">See a dermatologist if acne is deep, painful, scarring or does not improve in 8 to 12 weeks.</p></details>
+<details><summary>Dark spots and uneven skin tone</summary><p>Sun, old pimples, hormones and friction can leave dark patches. Dark, velvety patches on the neck, underarms or groin can be a sign of insulin resistance, which is common in PCOD, so mention them to your doctor.</p><ul><li>Apply sunscreen every day. It is the most important step.</li><li>Vitamin C serum in the morning and niacinamide can help fade marks over months.</li></ul></details>
+<details><summary>Dry, dull or oily skin</summary><p>Dry skin needs a richer moisturiser and fewer hot showers. Oily skin still needs a light, gel-based moisturiser. Dullness often improves with water, sleep, protein and gentle exfoliation once or twice a week.</p></details>
+<details><summary>Unwanted facial or body hair</summary><p>Extra dark hair on the chin, upper lip, chest or belly can come from higher androgen levels, often linked to PCOD. Hair removal methods such as threading, waxing or laser manage the hair, but they do not treat the cause.</p><p class="doc">Ask a doctor for a hormone check, especially if hair growth is fast or comes with irregular periods.</p></details>
+<details><summary>Hair fall and thinning</summary><p>Losing 50 to 100 hairs a day is normal. More than that, a wider parting, or a thinner ponytail needs attention. Common causes are low iron, low vitamin D or B12, thyroid problems, PCOD, crash diets, stress, illness and childbirth.</p><ul><li>Eat enough protein and iron-rich foods.</li><li>Be gentle: avoid tight hairstyles and very hot styling.</li><li>Get a blood test for iron (ferritin), vitamin D, B12 and thyroid (TSH).</li></ul></details>
+<details><summary>Dandruff and itchy scalp</summary><p>Flakes and itching usually come from a yeast-like fungus on an oily scalp, not from dryness. Wash with an anti-dandruff shampoo (ketoconazole, zinc pyrithione or selenium sulfide) two to three times a week, leaving it on for 3 minutes before rinsing.</p></details>
+<div class="note alert"><b>See a doctor if:</b> hair falls in patches, you lose a lot of hair suddenly, acne is severe, or skin and hair changes come with missed periods, fatigue or fast weight change.</div>
+
+<h3 style="margin-top:44px">Skin care tips and tricks</h3>
+<div class="grid3">
+<div class="card pose"><h3>Keep it simple</h3><p>Morning: cleanser, moisturiser, sunscreen SPF 30 or higher. Night: cleanser, moisturiser, and one treatment (such as retinol or a pimple gel) if needed.</p></div>
+<div class="card pose"><h3>Sunscreen every day</h3><p>Use about two finger-lengths for face and neck, even indoors and on cloudy days. Reapply every 2 to 3 hours if you are outside.</p></div>
+<div class="card pose"><h3>Patch test first</h3><p>Try any new product on your inner arm for 24 hours. Add only one new product at a time so you know what suits you.</p></div>
+<div class="card pose"><h3>Clean pillowcase and phone</h3><p>Change pillowcases weekly and wipe your phone screen often. Both touch your skin for hours.</p></div>
+<div class="card pose"><h3>Sleep and water</h3><p>Aim for 7 to 8 hours of sleep and regular water. Skin repairs itself at night.</p></div>
+<div class="card pose"><h3>Match your cycle</h3><p>Use gentler products in the week before your period, when skin is more sensitive and breakout-prone. Skin is usually calmest after your period ends.</p></div>
+</div>
+
+<h3 style="margin-top:44px">Haircare routine</h3>
+<div class="scroll"><table>
+<tr><th scope="row">Every day</th><td>Gently detangle with a wide-tooth comb, starting from the ends. Keep hair loosely tied, and sleep with a loose braid or a silk scrunchie.</td></tr>
+<tr><th scope="row">2 to 3 times a week</th><td>Shampoo your scalp and condition only the lengths. Use lukewarm water, and finish with a cool rinse.</td></tr>
+<tr><th scope="row">Once a week</th><td>Warm oil massage for 5 to 10 minutes, left on for 1 to 2 hours before shampooing. Or use a hair mask.</td></tr>
+<tr><th scope="row">Every month</th><td>Trim split ends (about 1 cm) every 8 to 12 weeks to stop breakage travelling up the hair.</td></tr>
+<tr><th scope="row">Avoid</th><td>Very hot water, daily heat styling, tight ponytails, and combing hair when it is soaking wet.</td></tr>
+</table></div>
+
+<h3 style="margin-top:44px">Hair fall care recipes</h3>
+<p>Home care can improve scalp health and reduce breakage. It cannot fix hair fall caused by low iron, thyroid or hormone problems, so get those checked too. Do a patch test before using any mix, and avoid broken or irritated skin.</p>
+<div class="grid3">
+<div class="card rec"><h3>Curry leaf coconut oil</h3><p class="t">Weekly oil</p><p><b>You need:</b> 1 cup coconut oil, a handful of fresh curry leaves.</p><p>Warm the oil on low heat, add the leaves and heat until they crackle. Cool, strain and store. Massage into the scalp, leave 1 hour, then shampoo.</p></div>
+<div class="card rec"><h3>Methi curd mask</h3><p class="t">Weekly mask</p><p><b>You need:</b> 2 tbsp fenugreek seeds soaked overnight, 3 tbsp curd.</p><p>Grind into a paste and mix with curd. Apply to scalp and hair for 30 minutes, then rinse with a mild shampoo.</p></div>
+<div class="card rec"><h3>Aloe vera scalp gel</h3><p class="t">Soothing treatment</p><p><b>You need:</b> 3 tbsp fresh aloe vera gel, 1 tsp coconut oil.</p><p>Blend and massage into a clean scalp. Leave for 30 minutes, then rinse. Helpful for itch and dryness.</p></div>
+<div class="card rec"><h3>Egg and curd protein mask</h3><p class="t">Monthly boost</p><p><b>You need:</b> 1 egg, 2 tbsp curd, 1 tsp olive oil.</p><p>Whisk and apply for 20 minutes. Rinse with cool water, never hot, so the egg does not cook. Skip if you are vegetarian or allergic.</p></div>
+<div class="card rec"><h3>Amla and hibiscus rinse</h3><p class="t">Wash-day rinse</p><p><b>You need:</b> 1 tbsp amla powder, 4 hibiscus flowers, 2 cups water.</p><p>Boil for 5 minutes, cool and strain. Pour over clean hair as a final rinse and leave for 5 minutes before rinsing out.</p></div>
+<div class="card rec"><h3>Hair-strength laddoo</h3><p class="t">Eat 1 a day</p><p><b>You need:</b> 1 cup roasted sesame, ½ cup flaxseed powder, ½ cup chopped dates, 2 tbsp ghee.</p><p>Mix and roll into small balls. Provides iron, zinc and healthy fats. If you manage blood sugar, keep portions small.</p></div>
+</div>
+
+<div class="note" style="margin-top:32px"><b>In short:</b> clear skin and strong hair start from the inside. Eat enough protein and iron, sleep well, manage stress and move your body. Keep skin and hair routines simple and gentle, use sunscreen daily, and treat recipes as support, not a cure. If skin or hair changes come with irregular periods, check hormones, iron, vitamin D and thyroid with your doctor.</div>
+</div></section>
+
+<section id="ask" class="band"><div class="wrap">
+<h2>Ask our AI health assistant</h2>
+<p>Ask anything about periods, PCOD/PCOS, diet, weight, yoga, skin or hair. No name, email or sign-up needed. Please don’t share personal details such as your phone number or address.</p>
+<div class="card" style="color:var(--ink);max-width:620px">
+<div id="chat" role="log" aria-live="polite"><div class="m b">Hi! I’m an AI assistant for general women’s health information. I can’t diagnose or replace a doctor. What would you like to know?</div></div>
+<div class="chips"><button type="button">Why is my period late?</button><button type="button">PCOD vs PCOS: what’s the difference?</button><button type="button">Foods to help with period cramps</button><button type="button">Easy yoga for PCOD</button></div>
+<div class="cform"><input id="cq" type="text" aria-label="Your question" placeholder="Type your question" maxlength="500" autocomplete="off"><button class="btn" id="send" type="button">Ask</button></div>
+<p class="doc" style="margin:12px 0 0">AI answers can be wrong. This is general information, not medical advice. Chats are not saved.</p>
+</div></div></section>
+</main>
+
+<footer><div class="wrap">
+<p><b>Medical disclaimer:</b> Sakhi shares general health, skin and hair information. It is not a diagnosis or a substitute for advice from a qualified doctor. In an emergency, call your local emergency number or go to the nearest hospital.</p>
+<p><b>Privacy:</b> Tracker dates are saved only in your own browser and are not sent to any server.</p>
+<p>© 2026 Sakhi</p>
+</div></footer>
+
+<script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+</body>
+</html>
